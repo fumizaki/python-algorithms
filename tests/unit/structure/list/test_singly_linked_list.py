@@ -137,5 +137,37 @@ def test_remove_non_existent_element():
     assert current_node.next.next is None
 
 
+def test_is_exist_empty_list():
+    linked_list = SinglyLinkedList()
+    assert not linked_list.is_exist(10)
+
+
+def test_is_exist_data_not_present():
+    linked_list = SinglyLinkedList()
+    linked_list.append(20)
+    linked_list.append(30)
+    assert not linked_list.is_exist(10)
+
+
+def test_is_exist_data_present_at_head():
+    linked_list = SinglyLinkedList()
+    linked_list.append(10)
+    assert linked_list.is_exist(10)
+
+
+def test_is_exist_data_present_in_middle():
+    linked_list = SinglyLinkedList()
+    linked_list.append(20)
+    linked_list.append(30)
+    linked_list.append(10)
+    assert linked_list.is_exist(10)
+
+
+def test_is_exist_data_present_at_tail():
+    linked_list = SinglyLinkedList()
+    linked_list.append(10)
+    linked_list.append(20)
+    linked_list.append(30)
+    assert linked_list.is_exist(30)
 
 

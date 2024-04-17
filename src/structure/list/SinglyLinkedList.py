@@ -60,13 +60,13 @@ class SinglyLinkedList:
     def reverse(self) -> None:
         
         prev_node: Optional[Node] = None
-        current = self.head
+        current_node = self.head
 
-        while current:
-            next_temp = current.next
-            current.next = prev_node
-            prev_node = current
-            current = next_temp
+        while current_node:
+            next_temp = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            current_node = next_temp
 
         self.head = prev_node
 
@@ -86,3 +86,18 @@ class SinglyLinkedList:
 
         reversed_head: Optional[Node] = None
         self.head = _reverse(self.head, reversed_head)
+
+
+    def is_exist(self, data: Any) -> bool:
+
+        if self.head is None:
+            return False
+        
+        current_node = self.head
+        while current_node:
+            if current_node.data == data:
+                return True
+            current_node = current_node.next
+       
+        return False
+
