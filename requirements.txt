@@ -1,3 +1,5 @@
+# for type-check
+mypy
 # for test
 pytest
 pytest-cov
